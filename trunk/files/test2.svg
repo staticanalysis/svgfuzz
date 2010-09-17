@@ -1,0 +1,37 @@
+<svg id="bar" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onload="alert('external-svg-xlink-onload')">
+
+    <x xmlns="http://www.w3.org/2001/xml-events" event="load" observer="bar" handler="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Chandler%20xml%3Aid%3D%22bar%22%20type%3D%22application%2Fecmascript%22%3E alert('external-data-via-event-observer') %3C%2Fhandler%3E%0A%3C%2Fsvg%3E%0A#bar"/>
+
+    <set attributeName="onmouseover" to="alert('external-svg-onmouseover-via-set')"/>
+    <animate attributeName="onunload" to="alert('external-svg-onunload-via-animate')"/>
+
+    <g id="foo" onload="alert('external-g-xlink-onload')">  
+    
+        <a xlink:href="javascript:alert('external-xlink-svg-via-use')" onload="alert('external-a-xlink-onload')">
+            <circle r="40" cx="40" cy="40" fill="red" onload="alert('external-a-child-xlink-onload')"></circle>
+        </a>
+        
+        <circle r="40" cx="60" cy="60" fill="green" onload="alert('external-circle-onload')">
+    
+            <set attributeName="fill" to="blue" onload="alert('external-set-onload')" />
+            <set attributeName="onmouseover" to="alert('external-set-onmouseover')" />
+            <animate attributeName="onmouseout" to="alert('external-animate-onmouseout')" />
+            <image xlink:href="test2.svg#foo" /> 
+            <image xlink:href="javascript:alert('external-xlink-javascript-image-href')" />
+            <image>
+                <set attributeName="xlink:href" to="javascript:alert('external-xlink-javascript-image-href-via-set')" />
+            </image>
+
+            <foreignObject>
+                <iframe xmlns="http://www.w3.org/1999/xhtml" src="javascript:alert('external-fO-iframe-src')"></iframe>
+            </foreignObject> 
+    
+            <animation xlink:href="javascript:alert('external-xlink-javascript-animation-href')" />
+            <animation xlink:href="data:text/html,%3cscript>alert('external-xlink-data-animation-href')%3c/script>" />
+            <animation><set attributeName="xlink:href" to="javascript:alert('external-xlink-javascript-animation-href-via-set')" /></animation>
+            
+            <discard xlink:href="test2.svg#foo" />
+        </circle>        
+        
+    </g>
+</svg>
