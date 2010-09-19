@@ -37,15 +37,18 @@
 	</li>
 	<li>
 		<div style="color-profile:url('test.svg')">7</div>
-	</li>	
-	<li>
-		<div style="font-family:test">8</div>
-	</li>		
-	<li>
-		<body background="test.svg">9</body>
 	</li>
 	<li>
-		<table background="test.svg">10</table>
+		<div style="icon:url('test.svg')">8</div>
+	</li>	
+	<li>
+		<div style="font-family:test">9</div>
+	</li>		
+	<li>
+		<body background="test.svg">10</body>
+	</li>
+	<li>
+		<table background="test.svg">11</table>
 	</li>	
 </ol>
 
