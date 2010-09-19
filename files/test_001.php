@@ -3,6 +3,10 @@
 <html>
 <head>
 	<style>
+		@font-face {
+		  font-family: test;
+		  src: url('test.svg');
+		}
 		li {
 			height:70px;
 			width:100px;
@@ -11,7 +15,7 @@
 	</style>
 </head>
 <body>
-<!-- embed SVG image vis IMG and CSS -->
+<!-- embed SVG image via IMG and CSS -->
 <ol>
 	<li>
 		<img id="test01" src="test.svg">
@@ -26,16 +30,22 @@
 		<ul style="list-style:url('test.svg')"><li>4</li></ul>
 	</li>
 	<li>
-		<div style="border-image:url('test.svg');-moz-border-image:url('test.svg')">5</div>
+		<div style="border-image:url('test.svg');-moz-border-image:url('test.svg');-webkit-border-image:url('test.svg')">5</div>
 	</li>
 	<li>
 		<div style="cursor:url('test.svg'), pointer">6</div>
 	</li>
 	<li>
-		<body background="test.svg">7</body>
+		<div style="color-profile:url('test.svg')">7</div>
+	</li>	
+	<li>
+		<div style="font-family:test">8</div>
+	</li>		
+	<li>
+		<body background="test.svg">9</body>
 	</li>
 	<li>
-		<table background="test.svg">8</table>
+		<table background="test.svg">10</table>
 	</li>	
 </ol>
 
